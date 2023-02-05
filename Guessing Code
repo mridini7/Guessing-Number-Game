@@ -1,0 +1,22 @@
+import random
+random_number = random.randrange(1, 10)
+name = input("What's your name? ")
+print("Hello " + name + " welcome to the guessing game!")
+player_guess = 0
+max_attempts = 3
+count = 0
+while player_guess != random_number:
+    player_guess = int(input("Guess a number from 1 - 10. "))
+    if player_guess > random_number:
+        print("Sorry too high! ")
+    elif player_guess == random_number:
+        print("Congrats you got it! ")
+        break
+    else:
+        print("Sorry too low! ")
+    count += 1
+    if count < max_attempts:
+        print("Attempts" + str(count) + "of" + str(max_attempts))
+    else:
+        print("Sorry you lost! The number was " + str(random_number))
+        break
